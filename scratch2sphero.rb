@@ -6,7 +6,7 @@ class PrintRSC < RSCWatcher
   def initialize
     super
 
-    sphero_tty = Dir.glob("/dev/tty.Sphero*").first
+    sphero_tty = Dir.glob("/dev/rfcomm*").first
     @sphero = Sphero.new sphero_tty
     @sphero.stop
     @speed = 20
